@@ -1,28 +1,70 @@
-
-<form method="POST" action="{% url 'home' %}">
-    {% csrf_token %}
-    <button type="submit">home</button>
-</form>
-
-<form method="POST" action="{% url 'about' %}">
-    {% csrf_token %}
-    <button type="submit">about</button>
-</form>
-
-<form method="POST" action="{% url 'connect' %}">
-    {% csrf_token %}
-    <button type="submit">connect</button>
-</form>
-
-<form method="POST" action="{% url 'blog:blogs' %}">
-    {% csrf_token %}
-    <button type="submit">blog</button>
-</form>
+{% load static %}  
 
 
-<form method="POST" action="{% url 'signupuser' %}">
-    {% csrf_token %}
-    <button type="submit">Sign Up</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}{% endblock %} 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CocaCola</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'portfolio/main.css' %}">
+</head>
+
+<body>
+
+    <div class="els">
+        <nav>
+
+            <div class="m-links" id="links">
+                <a href="{% url 'home' %}" id="m-active-page">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'connect' %}">Contact</a>
+                <a href="{% url 'blog:blogs' %}">Blog</a>
+            </div>
+
+
+            <div class="navbar">
+                <a href="{% url 'home' %}" id="active-page">
+                    Home
+                </a>
+                <a href="{% url 'about' %}">
+                    About
+                </a>
+                <a href="{% url 'connect' %}">
+                    Contact
+                </a>
+                <a href="{% url 'blog:blogs' %}">
+                    Blog
+                </a>
+            </div>
+
+            <div class="usernav">
+                <a href="">sign in</a>
+                /
+                <a href="{% url 'signupuser' %}">sign up</a>
+            </div>
+        </nav>
+
+{% block content %}
+
+{% endblock %} 
+
+
+    </div>
+
+    <footer>
+        <a href="mailto:mohadeseh.ansari98@gmail.com" class="footer-email">mohadeseh.ansari98@gmail.com</a>
+        <div class="cocalogo">
+            <a href="/" id="">Coca</a>
+
+        </div>
+
+        <address class="footer-address">Iran - Tehran - Enghelab - P22</address>
+    </footer>
+
+
+</body>
+
+</html>

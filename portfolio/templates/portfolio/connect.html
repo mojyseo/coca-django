@@ -2,6 +2,25 @@
 
 {% block content %}
 
-connect
+        <form action="#" class="contact-form">
+            <h1>Contact us</h1>
+            <div class="form-sec">
+                <label for="name"></label>Full name :</label>
+                <input type="text" name="name">
+            </div>
+            <div class="form-sec">
+                <label for="email">Email :</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-sec">
+                <label for="phone">Phone :</label>
+                <input type="number" name="phone">
+            </div>
+            <div class="form-sec">
+                <label for="desc">Your message :</label>
+                <textarea name="desc" id="" cols="30" rows="11"></textarea> </div>
+            <button type="submit">Send!</button>
+        </form>
+
 
 {% endblock %}
