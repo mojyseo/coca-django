@@ -1,0 +1,28 @@
+
+<form method="POST" action="{% url 'home' %}">
+    {% csrf_token %}
+    <button type="submit">home</button>
+</form>
+
+<form method="POST" action="{% url 'about' %}">
+    {% csrf_token %}
+    <button type="submit">about</button>
+</form>
+
+<form method="POST" action="{% url 'connect' %}">
+    {% csrf_token %}
+    <button type="submit">connect</button>
+</form>
+
+<form method="POST" action="{% url 'blog:blogs' %}">
+    {% csrf_token %}
+    <button type="submit">blog</button>
+</form>
+
+
+<form method="POST" action="{% url 'signupuser' %}">
+    {% csrf_token %}
+    <button type="submit">Sign Up</button>
+</form>
+
+{% block content %}{% endblock %} 
