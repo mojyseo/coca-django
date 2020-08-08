@@ -3,18 +3,45 @@
 
 {% block content %}
 
-
-<h1>Blogs</h1>
-
-<h2>CocaCola has {{ blog.count }} blog{{ blog.count|pluralize }}.</h2>
-
-{% for i in blog %}
-
-<a href="{% url 'blog:detail' i.id %}"><h2>{{ i.title }}</h2></a>
-<h5>{{ i.date }}</h5>
-<p>{{ i.discription|safe|truncatechars:100 }}</p>
+        <div class="blog-posts">
 
 
-{% endfor %}
+        {% for i in blog %}
+
+            <div class="blog-card">
+
+
+
+                    <div class="bpp">
+                        <div class="bppr">
+                        <a href="{% url 'blog:detail' i.id %}">
+                         <h2>{{ i.title }}</h2>
+
+                        </a>
+                            <p>{{ i.discription|safe|truncatechars:180 }}</p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="bpb">
+                    <a href="{% url 'blog:detail' i.id %}" target="_blank" class="btn-moreb">Read more</a>
+                    <div class="bpbi">
+                        <small>Author : mahi</small>
+                        <small>{{ i.date }}</small>
+                    </div>
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+
+        </div>
+
 
 {% endblock %}

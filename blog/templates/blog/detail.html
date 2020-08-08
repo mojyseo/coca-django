@@ -2,13 +2,32 @@
 {% extends 'portfolio/base.html' %}
 
 {% block content %}
+            <div class="blog-card">
 
 
-<h1>{{ b.title }}</h1>
 
-<h2>{{ b.date|date:'F jS Y' }}</h2>
+                    <div class="bpp">
+                        <div class="bppr">
+                         <h2>{{ b.title }}</h2>
 
-<p>{{ b.discription|safe }}</p>
+                            <p>{{ b.discription|safe|truncatechars:180 }}</p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="bpb">
+                    <div class="bpbi">
+                        <small>Author : mahi</small>
+                        <small>{{ b.date }}</small>
+                    </div>
+                </div>
+
+            </div>
 
 
 {% endblock %}
